@@ -1,6 +1,6 @@
 body {
   font-family: "Poppins", sans-serif;
-  color: #fafafa;
+  color: #2e0085;
   background: #000000;  
   background : #1B1E47;
    overflow-x:hidden;
@@ -167,14 +167,33 @@ video {
   color: #ffffff;
 }
 
-/*header section*/
+/* Default styles */
 .hero_area {
   height: 130vh;
   background-image: url(../images/hero-bg.png);
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
   position: relative;
 }
+
+/* Responsive styles */
+@media screen and (max-width: 768px) {
+  .hero_area {
+    height: 100vh; /* Reduce height for smaller screens */
+    background-size: contain; /* Adjust background to fit smaller screens */
+    background-position: top;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .hero_area {
+    height: 90vh; /* Further reduce height for mobile */
+    background-size: cover;
+    background-position: center;
+  }
+}
+
 
 .hero_area::before {
   content: "";
@@ -408,7 +427,7 @@ a:focus {
 .slider_section .detail-box .btn-box .btn-1 {
   display: inline-block;
   padding: 10px 35px;
-  background-color: #fefdfd;
+  background-color: #ffffff;
   border: 1px solid transparent;
   border-radius: 35px;
   color: #000000;
