@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sale Ended</title>
+    <title>Ticket Sales</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -12,25 +12,48 @@
             padding: 50px;
         }
 
-        h1 {
-            color: #e8e8e8;
+        #ts-iframe {
+            display: block; /* Show the iframe by default */
+            border: none; /* Remove default border */
+            width: 80%; /* Set width */
+            height: 600px; /* Set height */
+            margin: 20px auto; /* Center the iframe */
         }
-        
-        img {
-            max-width: 100%;
-            height: auto;
-            margin-top: 20px;
+
+        #close-button {
+            display: block; /* Show the close button */
+            margin: 10px auto; /* Center the button */
+            padding: 10px 20px; /* Add some padding */
+            background-color: #f44336; /* Red background */
+            color: white; /* White text */
+            border: none; /* No border */
+            cursor: pointer; /* Pointer cursor */
+        }
+
+        #close-button:hover {
+            background-color: #d32f2f; /* Darker red on hover */
         }
     </style>
     <link rel="stylesheet" href="css/custom.css">
 </head>
 <body>
     <div class="gradient"></div>
-    <div class="text1">
-    <h1>Sale Ended</h1>
-    <p>We're sorry, but the sale has ended. Check back for future events.</p>
-    <button class="black-button" ><a class="remove" href="index.html">Home</a</button>
-    
-    
+
+    <!-- Hidden iframe for Townscript -->
+    <iframe id="ts-iframe" src="https://www.townscript.com/v2/widget/rapzaura-111102/booking" frameborder="0"style="width: 80%;"></iframe>
+
+    <!-- Close button for the iframe -->
+    <button onclick="closeTownscriptIframe()" id="close-button">Close</button>
+
+    <!-- JavaScript to handle iframe display -->
+    <script>
+        function closeTownscriptIframe() {
+            var iframe = document.getElementById('ts-iframe');
+            var closeButton = document.getElementById('close-button');
+              window.location.href = "index.html"; 
+            iframe.style.display = 'none'; // Hide the iframe
+            closeButton.style.display = 'none'; // Hide the close button
+        }
+    </script>
 </body>
 </html>
